@@ -3,6 +3,7 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 //import sun.jvm.hotspot.utilities.Assert;
 import org.junit.Assert;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 abstract public class SearchPageObject extends MainPageObject {
     protected static String
@@ -18,7 +19,7 @@ abstract public class SearchPageObject extends MainPageObject {
             FIRST_SEARCH_RESULT,
             SECOND_SEARCH_RESULT,
             THIRD_SEARCH_RESULT;
-    public SearchPageObject(AppiumDriver driver) {
+    public SearchPageObject(RemoteWebDriver driver) {
         super(driver);
     }
     /*TEMPLATES METHODS*/

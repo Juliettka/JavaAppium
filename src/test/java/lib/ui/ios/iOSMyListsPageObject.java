@@ -2,6 +2,7 @@ package lib.ui.ios;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.MyListsPageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class iOSMyListsPageObject extends MyListsPageObject {
     static {
@@ -9,7 +10,7 @@ public class iOSMyListsPageObject extends MyListsPageObject {
         TITLE_ELEMENT_IN_MY_LISTS = "id:org.wikipedia:id/page_list_item_title";
         DELETE_ARTICLE = "id:swipe action delete";
     }
-    public iOSMyListsPageObject(AppiumDriver driver) {
+    public iOSMyListsPageObject(RemoteWebDriver driver) {
         super(driver);
     }
 }

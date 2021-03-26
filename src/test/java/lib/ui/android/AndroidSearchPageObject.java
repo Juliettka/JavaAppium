@@ -2,6 +2,7 @@ package lib.ui.android;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.SearchPageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AndroidSearchPageObject extends SearchPageObject {
     static {
@@ -18,7 +19,7 @@ public class AndroidSearchPageObject extends SearchPageObject {
         SECOND_SEARCH_RESULT="xpath://*[contains(@text,'JavaScript')]";
         THIRD_SEARCH_RESULT="xpath://*[contains(@text,'Java (programming language)')]";
     }
-    public AndroidSearchPageObject(AppiumDriver driver) {
+    public AndroidSearchPageObject(RemoteWebDriver driver) {
         super(driver);
     }
 }

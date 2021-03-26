@@ -2,6 +2,7 @@ package lib.ui.ios;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.ArticlePageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class IosArticlePageObject extends ArticlePageObject {   static {
     TITLE = "id:JavaScript";
@@ -12,7 +13,7 @@ public class IosArticlePageObject extends ArticlePageObject {   static {
     EXISTING_FOLDER = "id:org.wikipedia:id/item_container";
 }
 
-    public IosArticlePageObject(AppiumDriver driver) {
+    public IosArticlePageObject(RemoteWebDriver driver) {
         super(driver);
     }
 }
