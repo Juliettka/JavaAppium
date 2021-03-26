@@ -41,6 +41,7 @@ public class Platform {
     public Boolean isIos() {
         return isPlatform(PLATFORM_IOS);
     }
+    public Boolean isMw() {return isPlatform(PLATFORM_WEB_MOBILE);}
 
     private DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -66,7 +67,7 @@ public class Platform {
         String platform = this.getPlatformVar();
         return my_platform.equals(platform);
     }
-    private String getPlatformVar() {
+    public String getPlatformVar() {
         return System.getenv("PLATFORM");
     }
 }
