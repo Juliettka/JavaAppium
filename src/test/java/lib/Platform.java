@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import sun.jvm.hotspot.utilities.soql.MapScriptObject;
+//import sun.jvm.hotspot.utilities.soql.MapScriptObject;
 
 import java.net.URL;
 import java.util.HashMap;
