@@ -4,7 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import lib.ui.ArticlePageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class IosArticlePageObject extends ArticlePageObject {   static {
+public class IosArticlePageObject extends ArticlePageObject {
+    static {
     TITLE = "id:JavaScript";
     TITLE_SECOND = "id:Java";
     FOOTER_ELEMENT = "id:View article in browser";
