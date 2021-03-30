@@ -4,10 +4,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AuthorizationPageObject extends MainPageObject{
     private static final String
-    LOGIN_BUTTON="",
-    LOGIN_INPUT="",
-    PASSWORD_INPUT="",
-    SUBMIT_BUTTON="";
+    LOGIN_BUTTON="xpath://body/div/a[text='Log in']",
+    LOGIN_INPUT="css:input[name='wpName']",
+    PASSWORD_INPUT="css:input[name='wpPassword']",
+    SUBMIT_BUTTON="css:button#wpLoginAttempt";
 
     public AuthorizationPageObject (RemoteWebDriver driver) {
         super(driver);
@@ -21,6 +21,8 @@ public class AuthorizationPageObject extends MainPageObject{
     public void enterLoginDate(String login, String password) {
         this.waitForElementAndSendKeys(LOGIN_INPUT, login, "Cannot enter login", 5);
         this.waitForElementAndSendKeys(PASSWORD_INPUT, password, "Cannot enter password", 5);
-
+    }
+    public void submitForm(){
+        this.waitForElementAndClick(SUBMIT_BUTTON, "Cannot submit form", 10);
     }
 }

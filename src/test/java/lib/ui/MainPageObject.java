@@ -72,6 +72,24 @@ public class MainPageObject {
         }
     }
 
+    public boolean isElementPresent(String locator){
+        return getAmountOfElements(locator)> 0;
+    }
+    public void tryClickElementFewAttempts(String locator, String error_message, int amount_of_attempts){
+        int current_attempts = 0;
+        boolean need_more_attempts = true;
+        while (need_more_attempts){
+            try {
+                this.waitForElementAndClick(locator, error_message, 1);
+                need_more_attempts = false;
+            } catch (Exception e) {
+                if (current_attempts>amount_of_attempts){
+                    this.waitForElementAndClick(locator,error_message,5);
+                }
+            }
+            ++current_attempts;
+        }
+    }
    // public static boolean assertElementContainsText(String locator, String error_message, String expected_text) throws Exception {
       //  WebElement element = waitForElementPresent(locator, error_message, 5);
     //    if (Platform.getInstance().isAndroid()) {

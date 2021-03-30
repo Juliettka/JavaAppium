@@ -13,6 +13,7 @@ abstract public class ArticlePageObject extends MainPageObject {
             FOOTER_ELEMENT,
             OPTIONS_BUTTON,
             OPTIONS_ADD_TO_MY_LIST_BUTTON,
+            OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
             ADD_TO_MY_LIST_OVERLAY,
             MY_LIST_NAME_INPUT,
             MY_LIST_OK_BUTTON,
@@ -104,14 +105,28 @@ abstract public class ArticlePageObject extends MainPageObject {
         );
     }
     public void closeArticle(){
+        if (Platform.getInstance().isIos() || Platform.getInstance().isAndroid()) {
         this.waitForElementAndClick(CLOSE_ARTICLE_BUTTON,
                   "Cannot close article",
                 15
-        );
+        );}
+        else {
+            System.out.println("The method CloseArticle is doing nothing for platform " +Platform.getInstance().getPlatformVar() );
+        }
     }
     public void addArticleToMySaved(){
         this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option add to my reading list", 5);
 
+    }
+    public void removeArticleFromMySavedIfItIsAdded(){
+        if (this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)){
+            this.waitForElementAndClick(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
+                    "Cannot click Remove from my list button",
+                    15);
+            this.waitForElementPresent(OPTIONS_ADD_TO_MY_LIST_BUTTON,
+                    "Cannot find button Add to my list",
+                    15);
+        }
     }
     public void articleOpened(){
         this.waitForTitleElement();
