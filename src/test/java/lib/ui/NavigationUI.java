@@ -26,7 +26,7 @@ abstract public class NavigationUI extends MainPageObject{
     }
     public void clickMyLists() {
         if (Platform.getInstance().isMw()){
-            this.tryClickElementFewAttempts(MY_LISTS_LINK,
+                      this.tryClickElementFewAttempts(MY_LISTS_LINK,
                     "Cannot find Navigation button to my lists",
                     5);
         } else {

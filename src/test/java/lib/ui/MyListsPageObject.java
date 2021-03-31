@@ -35,7 +35,7 @@ abstract public class MyListsPageObject extends MainPageObject{
                 "Cannot find folder by name" + name_of_folder,
                 5);
     }
-    public void swipeByArticleToDelete(String article_title) {
+    public void swipeByArticleToDelete(String article_title)  {
         if (Platform.getInstance().isAndroid()) {
             this.waitForArticleToAppearByTitle(article_title);
             String article_xpath = getFolderXPathByName(article_title);
@@ -63,6 +63,7 @@ abstract public class MyListsPageObject extends MainPageObject{
             this.waitForElementAndClick(remove_locator,
                     "Cannot click button to remove article from saved",
                     5);
+           // Thread.sleep(2000);
             driver.navigate().refresh();
             this.waitForArticleToDisappearByTitle(article_title);
         }
@@ -88,7 +89,7 @@ abstract public class MyListsPageObject extends MainPageObject{
                 15);}
         else {
             String article_xpath = getSavedArticleXPathByTitle(article_title);
-            this.waitForElementPresent(article_xpath, "Cannot find saved article"+article_title,
+            this.waitForElementPresent(article_xpath, "Cannot find saved article "+article_title,
                     15);
         }
     }
