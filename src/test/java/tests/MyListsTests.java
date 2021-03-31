@@ -23,7 +23,6 @@ public class MyListsTests extends CoreTestCase {
         SearchPageObject.clickByArticleWithSubstring("bject-oriented programming language");
         ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.waitForTitleElement();
-
         String article_title = ArticlePageObject.getArticleTitle();
         if (Platform.getInstance().isAndroid()) {
             ArticlePageObject.addArticleToMyList(name_of_folder);
@@ -59,13 +58,14 @@ public class MyListsTests extends CoreTestCase {
         MyListsPageObject.swipeByArticleToDelete(article_title);
 
     }
+
     @Test
     public void testSave2ArticlesToTheList(){
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
        // String search_line = "Java";
         SearchPageObject.typeSearchLine("Java");
-        SearchPageObject.clickByArticleWithSubstring("JavaScript");
+        SearchPageObject.clickByArticleWithSubstring("bject-oriented programming language");
 
         ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.waitForTitleElement();

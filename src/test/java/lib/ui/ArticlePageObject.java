@@ -115,7 +115,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         }
     }
     public void addArticleToMySaved(){
-        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option add to my reading list", 5);
+        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option add to my reading list", 15);
 
     }
     public void removeArticleFromMySavedIfItIsAdded(){
