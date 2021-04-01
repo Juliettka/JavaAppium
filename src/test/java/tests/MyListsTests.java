@@ -44,7 +44,7 @@ public class MyListsTests extends CoreTestCase {
             Auth.submitForm();
 
             ArticlePageObject.waitForTitleElement();
-            assertEquals("We are not on the same page after login",
+            Assert.assertEquals("We are not on the same page after login",
                     article_title,
                     ArticlePageObject.getArticleTitle());
             ArticlePageObject.addArticleToMySaved();
@@ -100,7 +100,7 @@ public class MyListsTests extends CoreTestCase {
             Auth.submitForm();
             Thread.sleep(2000);
             ArticlePageObject.waitForTitleElement();
-            assertEquals("We are not on the same page after login",
+            Assert.assertEquals("We are not on the same page after login",
                     first_article,
                     ArticlePageObject.getArticleTitle());
             ArticlePageObject.addArticleToMySaved();
@@ -147,7 +147,7 @@ public class MyListsTests extends CoreTestCase {
         MyListsPageObject.waitForArticleToDisappearByTitle(first_article);
         Thread.sleep(3000);
         MyListsPageObject.waitForArticleToAppearByTitle(second_article);
-        assertEquals("The title of the article is not equal to the title in my list",
+        Assert.assertEquals("The title of the article is not equal to the title in my list",
                 "Java",
                 second_article);
     }
