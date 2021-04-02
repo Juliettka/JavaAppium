@@ -1,21 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: tests.ArticleTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 28.156 s <<< FAILURE! - in tests.ArticleTests
-testAssertTitle(tests.ArticleTests)  Time elapsed: 16.048 s  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 29.064 s <<< FAILURE! - in tests.ArticleTests
+testAssertTitle(tests.ArticleTests)  Time elapsed: 15.933 s  <<< ERROR!
 org.openqa.selenium.TimeoutException: 
 Expected condition failed: Cannot find and click search result with substringobject-oriented programming language
  (tried for 10 second(s) with 500 milliseconds interval)
-	at tests.ArticleTests.testAssertTitle(ArticleTests.java:57)
+	at tests.ArticleTests.testAssertTitle_aroundBody4(ArticleTests.java:63)
+	at tests.ArticleTests.testAssertTitle(ArticleTests.java:59)
 Caused by: org.openqa.selenium.NoSuchElementException: 
 Cannot locate an element using By.xpath: //div[contains(@class,'wikidata-description')][contains(text(), 'object-oriented programming language')]
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'LAPTOP-M7G32PN6', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
 Driver info: driver.version: unknown
-	at tests.ArticleTests.testAssertTitle(ArticleTests.java:57)
-
-testCompareArticleTitle(tests.ArticleTests)  Time elapsed: 5.9 s  <<< ERROR!
-java.lang.NullPointerException
-	at tests.ArticleTests.testCompareArticleTitle(ArticleTests.java:26)
+	at tests.ArticleTests.testAssertTitle_aroundBody4(ArticleTests.java:63)
+	at tests.ArticleTests.testAssertTitle(ArticleTests.java:59)
 

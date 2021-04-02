@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -13,14 +14,19 @@ abstract public class MyListsPageObject extends MainPageObject{
             REMOVE_FROM_SAVED_BUTTON,
             DELETE_ARTICLE;
 
+    @Step("Getting '{FOLDER_NAME}'folder xpath")
     private static String getFolderXPathByName(String name_of_folder) {
         return FOLDER_BY_NAME_TPL.replace("{FOLDER_NAME}",
                 name_of_folder);
     }
+
+    @Step("Getting saved article '{TITLE}'xpath")
     private static String getSavedArticleXPathByTitle(String article_title) {
         return ARTICLE_BY_TITLE_TPL.replace("{TITLE}",
                 article_title);
     }
+
+    @Step("Getting remove button from saved articles")
     private static String getRemoveButtonByTitle(String article_title) {
         return REMOVE_FROM_SAVED_BUTTON.replace("{TITLE}",
                 article_title);
@@ -29,12 +35,16 @@ abstract public class MyListsPageObject extends MainPageObject{
     public MyListsPageObject (RemoteWebDriver driver) {
         super(driver);
     }
+
+    @Step("Open folder '{name_of_folder}'")
     public void openFolderByName(String name_of_folder) {
         String folder_name_xpath = getFolderXPathByName(name_of_folder);
         this.waitForElementAndClick(folder_name_xpath,
                 "Cannot find folder by name" + name_of_folder,
                 5);
     }
+
+    @Step("Swiping article to delete")
     public void swipeByArticleToDelete(String article_title)  {
         if (Platform.getInstance().isAndroid()) {
             this.waitForArticleToAppearByTitle(article_title);
@@ -68,6 +78,8 @@ abstract public class MyListsPageObject extends MainPageObject{
             this.waitForArticleToDisappearByTitle(article_title);
         }
     }
+
+    @Step("Waiting '{article_title}' to disappear")
     public void waitForArticleToDisappearByTitle(String article_title) {
         if (Platform.getInstance().isAndroid()) {
         String article_xpath = getFolderXPathByName(article_title);
@@ -81,6 +93,8 @@ abstract public class MyListsPageObject extends MainPageObject{
                     15);
         }
     }
+
+    @Step("Waiting '{article_title}' to appear")
     public void waitForArticleToAppearByTitle(String article_title) {
         if (Platform.getInstance().isAndroid()) {
         String article_xpath = getFolderXPathByName(article_title);
@@ -93,11 +107,14 @@ abstract public class MyListsPageObject extends MainPageObject{
                     15);
         }
     }
+
+    @Step("Getting article title in my reading list")
     public String getArticleTitleInTheList(){
         WebElement title_element = waitForTitleInMyListElement();
         return title_element.getAttribute("text");
     }
 
+    @Step("Waiting title element to appear in my reading list")
     private WebElement waitForTitleInMyListElement () {
         return this.waitForElementPresent(TITLE_ELEMENT_IN_MY_LISTS, "Cannot find Article Title in my lists",
                 15);
