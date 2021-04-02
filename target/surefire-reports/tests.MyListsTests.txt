@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: tests.MyListsTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 44.033 s <<< FAILURE! - in tests.MyListsTests
+testSave2ArticlesToTheList(tests.MyListsTests)  Time elapsed: 36.366 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: Cannot find option add to my reading list
+ (tried for 15 second(s) with 500 milliseconds interval)
+	at tests.MyListsTests.testSave2ArticlesToTheList(MyListsTests.java:106)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using By.cssSelector: #page-actions a#ca-watch.mw-ui-icon-wikimedia-star-base20
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'LAPTOP-M7G32PN6', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+Driver info: driver.version: unknown
+	at tests.MyListsTests.testSave2ArticlesToTheList(MyListsTests.java:106)
+
+testSaveFirstArticleToMyList(tests.MyListsTests)  Time elapsed: 7.511 s  <<< ERROR!
+org.openqa.selenium.ElementNotInteractableException: 
+element not interactable
+  (Session info: chrome=89.0.4389.90)
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'LAPTOP-M7G32PN6', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.90, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\julie\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52459}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 66dfbd7ce6b9bbaab0975ee382bf93d3
+	at tests.MyListsTests.testSaveFirstArticleToMyList(MyListsTests.java:42)
+

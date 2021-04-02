@@ -24,7 +24,7 @@ public class ChangeAppConditionTests extends CoreTestCase {
         String title_before_rotation = ArticlePageObject.getArticleTitle();
         this.rotateScreenLandscape();
         String title_after_rotation = ArticlePageObject.getArticleTitle();
-        assertEquals("Article title has been changed after rotation",
+        Assert.assertEquals("Article title has been changed after rotation",
                 title_before_rotation,
                 title_after_rotation);
         this.rotateScreenPortrait();

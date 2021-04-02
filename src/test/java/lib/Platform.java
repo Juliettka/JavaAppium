@@ -41,7 +41,7 @@ public class Platform {
         }
         else
         {
-            throw new Exception("Cannot return type of Driver. Platform is"+ this.getPlatformVar());
+            throw new Exception("Cannot return type of Driver. Platform is "+ this.getPlatformVar());
         }
     }
     public Boolean isAndroid() {
