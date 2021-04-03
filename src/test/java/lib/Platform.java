@@ -3,6 +3,7 @@ package lib;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.qameta.allure.Step;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -28,6 +29,7 @@ public class Platform {
         return instance;
     }
 
+    @Step("Getting driver")
     public RemoteWebDriver getDriver() throws Exception {
         URL URL = new URL(APPIUM_URL);
         if (this.isAndroid()) {
@@ -52,6 +54,7 @@ public class Platform {
     }
     public Boolean isMw() {return isPlatform(PLATFORM_WEB_MOBILE);}
 
+    @Step("Getting Android capabilities")
     private DesiredCapabilities getAndroidDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
@@ -63,6 +66,8 @@ public class Platform {
         capabilities.setCapability("app", "/Users/admin/Desktop/Appium/apks/org.wikipedia.apk");
         return capabilities;
     }
+
+    @Step(" Getting iOS capabilities")
     private DesiredCapabilities getIosDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "iOS");
@@ -76,6 +81,8 @@ public class Platform {
         String platform = this.getPlatformVar();
         return my_platform.equals(platform);
     }
+
+    @Step("Setting Chrome options")
     private ChromeOptions getMwChromeOptions(){
         Map<String,Object> deviceMetrics = new HashMap<String,Object>();
         deviceMetrics.put("width", 360);
@@ -89,6 +96,8 @@ public class Platform {
         ChromeOptions.addArguments("window-size=340,640");
         return ChromeOptions;
     }
+
+    @Step("Getting plarform")
     public String getPlatformVar() {
         return System.getenv("PLATFORM");
     }

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tests.ArticleTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 29.064 s <<< FAILURE! - in tests.ArticleTests
-testAssertTitle(tests.ArticleTests)  Time elapsed: 15.933 s  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 29.732 s <<< FAILURE! - in tests.ArticleTests
+testAssertTitle(tests.ArticleTests)  Time elapsed: 17.421 s  <<< ERROR!
 org.openqa.selenium.TimeoutException: 
 Expected condition failed: Cannot find and click search result with substringobject-oriented programming language
  (tried for 10 second(s) with 500 milliseconds interval)

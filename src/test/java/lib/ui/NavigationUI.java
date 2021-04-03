@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -14,6 +15,7 @@ abstract public class NavigationUI extends MainPageObject{
         super(driver);
     }
 
+    @Step("Open navigation menu in mobile web")
     public void openNavigation(){
         if (Platform.getInstance().isMw()) {
             this.waitForElementAndClick(OPEN_NAVIGATION,
@@ -24,6 +26,8 @@ abstract public class NavigationUI extends MainPageObject{
             System.out.println("The method openNavigation is doing nothing for platform " + Platform.getInstance().getPlatformVar());
         }
     }
+
+    @Step("Opening my reading list")
     public void clickMyLists() {
         if (Platform.getInstance().isMw()){
                       this.tryClickElementFewAttempts(MY_LISTS_LINK,
@@ -35,6 +39,8 @@ abstract public class NavigationUI extends MainPageObject{
                 15
         );}
     }
+
+    @Step("Closing popup in iOS")
     public void closePopup(){
         this.waitForElementAndClick(CLOSE_POPUP, "Cannot find popup", 5);
     }

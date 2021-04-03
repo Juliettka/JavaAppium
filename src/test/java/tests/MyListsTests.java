@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.*;
@@ -18,6 +20,11 @@ public class MyListsTests extends CoreTestCase {
             login="JuliettkaKk",
             password="JuL1987!";
 
+    @Features(value = {@Feature(value = "My reading list"), @Feature(value = "Search"), @Feature(value = "Article")})
+    @DisplayName("Saving first article in my reading list")
+    @Description("We are saving first article in my reading list, removing it from reading list")
+    @Step("Starting saving first article in my reading list test")
+    @Severity(value = SeverityLevel.CRITICAL)
     @Test
     public void testSaveFirstArticleToMyList (){
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
@@ -67,7 +74,11 @@ public class MyListsTests extends CoreTestCase {
         MyListsPageObject.swipeByArticleToDelete(article_title);
 
     }
-
+    @Features(value = {@Feature(value = "My reading list"), @Feature(value = "Search"), @Feature(value = "Article")})
+    @DisplayName("Saving 2 articles in my reading list")
+    @Description("We are saving 2 articles in my reading list, removing one from reading list and checking that another one is still there")
+    @Step("Starting 2 articles in my reading list test")
+    @Severity(value = SeverityLevel.CRITICAL)
     @Test
     public void testSave2ArticlesToTheList() throws InterruptedException {
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
